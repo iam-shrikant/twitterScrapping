@@ -3,15 +3,11 @@ import json
 import pandas as pd
 from pymongo import MongoClient
 
-client = MongoClient("localhost", 27017)
 
+client = MongoClient("localhost", 27017)
 myMongoDB = client["master_scraper_db"]
 myMongoCollection = myMongoDB["twitter_scrapper_data"]
 
-# scraper = twitterScraper.TwitterUserScraper("SrBachchan")
-# twitterScraper.TwitterSearchScraper
-
-# for i, tweet in enumerate(scraper.get_items()):
 
 row_result = []
 query = 'dataScientist until:2023-04-06 since:2023-04-05'
@@ -28,7 +24,7 @@ for i, tweet in enumerate(
         # print(tweet.rawContent)
 twitterData = pd.DataFrame(row_result, columns=["date", "id", "url", "tweet content", "user", "reply count",
                                                 "retweet count", "language", "source", "like count"])
-# print(twitterData)
+print(twitterData)
 
 
 json_result = {"Scraped Word": query,
