@@ -40,4 +40,4 @@ file.write(jData)
 file.close()
 
 rec = myMongoCollection.insert_one(json_result)
-print("Record inserted successfully ")
+print("Record inserted successfully  ")
